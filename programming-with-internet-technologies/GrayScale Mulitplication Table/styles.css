@@ -1,12 +1,17 @@
+/* === Table Layout === */
 table {
-    border-collapse: collapse;
-    margin: 20px auto;
+    border-collapse: collapse;    /* Merge borders between adjacent cells for cleaner look */
+    margin: 20px auto;            /* Center the table horizontally with spacing above/below */
 }
+
+/* === Table Cells and Headers === */
 td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-    text-align: center;
+    border: 1px solid black;      /* Apply consistent border to all cells */
+    padding: 5px 10px;            /* Add spacing inside cells for readability */
+    text-align: center;           /* Center-align text horizontally */
 }
+
+/* === Table Header Styling === */
 th {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;    /* Light gray background for column/row headers */
 }
