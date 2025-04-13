@@ -1,4 +1,13 @@
 /**
+ * Author: Robert Lovelace
+ * Course: CSC 635 Programming with Internet Technologies
+ * Semester: Spring 2024
+ * File: script.js
+ * Description: Dynamically generates a 13x13 multiplication table (0–12) and applies
+ *              rainbow gradient backgrounds to each cell based on the product value.
+ */
+
+/**
  * Generates a 13x13 multiplication table (0–12) and populates it in the HTML element
  * with dynamic background colors based on the product value.
  */
