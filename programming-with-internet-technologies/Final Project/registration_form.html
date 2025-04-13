@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Responsive viewport for mobile compatibility -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>LSUS RPi Registration</title>
+
+    <!-- Link to external stylesheet for presentation and layout -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- Main registration form container -->
 <div class="lsus-form">
     <h2>LSUS RPi Registration Form</h2>
+
+    <!-- School logo for branding consistency -->
     <img src="LSUSAnchor.jpg" alt="LSUS Logo" class="logo">
 
+    <!-- Registration form to collect student and device info -->
     <form id="registrationForm" action="submit_form.php" method="post" onsubmit="return validateForm()">
+        
+        <!-- Basic identity and contact info -->
         <div class="form-section">
             <label for="firstName">First name:</label>
             <input type="text" id="firstName" name="firstName" required>
@@ -29,6 +39,7 @@
             <label for="macAddress">RPi WiFi MAC address:</label>
             <input type="text" id="macAddress" name="macAddress" placeholder="XX:XX:XX:XX:XX:XX" required>
 
+            <!-- Select dropdown to identify Raspberry Pi model -->
             <label for="rpiType">RPi Type:</label>
             <select id="rpiType" name="rpiType" required>
                 <option value="RPi 5">RPi 5</option>
@@ -40,6 +51,7 @@
             </select>
         </div>
 
+        <!-- Course checkboxes to allow multiple selections -->
         <div class="form-section">
             <fieldset>
                 <legend>Courses RPi used for:</legend>
@@ -51,6 +63,7 @@
             </fieldset>
         </div>
 
+        <!-- Academic level radio buttons (mutually exclusive) -->
         <div class="form-section">
             <fieldset>
                 <legend>Academic level:</legend>
@@ -62,12 +75,18 @@
             </fieldset>
         </div>
 
+        <!-- Google reCAPTCHA to prevent spam submissions -->
         <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
+        <!-- Form submission button -->
         <button type="submit" class="submit-btn">Submit</button>
     </form>
 </div>
 
+<!-- Load Google reCAPTCHA API -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Link to external JavaScript file for front-end validation -->
 <script src="scripts.js"></script>
 
 </body>
