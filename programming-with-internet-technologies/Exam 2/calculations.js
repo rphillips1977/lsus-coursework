@@ -1,3 +1,13 @@
+/* 
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Semester: Spring 2024
+    File: calculations.js
+    Description: Handles input validation and metric calculations 
+                 (volume, surface area, edge length, and weight density)
+                 for a container metrics calculator.
+*/
+
 // Ensure the DOM is fully loaded before executing any JavaScript logic
 document.addEventListener('DOMContentLoaded', () => {
     // Select all text input elements inside the containerMetrics section
