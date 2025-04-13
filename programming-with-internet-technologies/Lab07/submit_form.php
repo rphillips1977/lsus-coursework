@@ -1,4 +1,13 @@
 <?php
+/**
+ * Author: Robert Lovelace
+ * Course: CSC 635 Programming with Internet Technologies
+ * Semester: Spring 2024
+ * File: submit_form.php
+ * Description: Handles the POST submission of the LSUS RPi registration form,
+ *              sanitizes input, and displays a summary confirmation page.
+ */
+
 // =======================
 // LSUS RPi Registration Submission Handler
 // =======================
