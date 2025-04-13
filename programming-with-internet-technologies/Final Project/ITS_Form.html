@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Ensures the site is mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>LSUS ITS Form</title>
+
+    <!-- Inline CSS styling for simplicity; separates structure and presentation -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,20 +22,27 @@
             border-radius: 5px;
         }
         .lsus-form h2 {
-            color: #4b0082;
+            color: #4b0082; /* LSUS purple */
         }
-        .lsus-form label, .lsus-form input, .lsus-form select, .lsus-form textarea, .submit-btn {
+        .lsus-form label,
+        .lsus-form input,
+        .lsus-form select,
+        .lsus-form textarea,
+        .submit-btn {
             display: block;
             width: 100%;
             margin-bottom: 10px;
         }
-        .lsus-form input[type=text], .lsus-form input[type=email], .lsus-form select, .lsus-form textarea {
+        .lsus-form input[type=text],
+        .lsus-form input[type=email],
+        .lsus-form select,
+        .lsus-form textarea {
             padding: 8px;
             border-radius: 4px;
             border: 1px solid #ccc;
         }
         .lsus-form .submit-btn {
-            background-color: #ffd700;
+            background-color: #ffd700; /* LSUS gold */
             color: white;
             padding: 10px 15px;
             border: none;
@@ -42,18 +53,26 @@
 </head>
 <body>
 
+<!-- Form container styled for clarity and accessibility -->
 <div class="lsus-form">
     <h2>ITS Form</h2>
+
+    <!-- School logo for branding -->
     <img src="LSUSAnchor.jpg" alt="LSUS Logo" style="max-width: 100px; margin-bottom: 20px;">
-    <form id="ITS_Form" action="submit_its_form.php" method="post">
+
+    <!-- Main form using POST method to submit to server-side script -->
+    <form id="ITS_Form" action="submit_its_form.php" method="post" onsubmit="return validateForm();">
+        
         <?php
-            // Assume data is retrieved and stored in variables
-            $firstName = ""; // Replace with data retrieval logic
+            // Server-side data prepopulation (useful when editing submissions)
+            $firstName = ""; // Replace with actual retrieval logic
             $lastName = "";
             $studentID = "";
             $email = "";
             $macAddress = "";
         ?>
+
+        <!-- Form Fields -->
         <label for="firstName">First name:</label>
         <input type="text" id="firstName" name="firstName" value="<?php echo $firstName; ?>" required>
 
@@ -72,22 +91,34 @@
         <label for="ipAddress">RPi IP Address:</label>
         <input type="text" id="ipAddress" name="ipAddress" placeholder="192.168.1.1" required>
 
+        <!-- Google reCAPTCHA to protect against spam submissions -->
         <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
+        <!-- Submission Button -->
         <button type="submit" class="submit-btn">Submit</button>
     </form>
 </div>
 
+<!-- Google reCAPTCHA script -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Client-side validation for MAC address -->
 <script>
+    /**
+     * Validates MAC address format (e.g., AA:BB:CC:DD:EE:FF) before form submission.
+     * @returns {boolean} True if valid, otherwise false with alert
+     */
     function validateForm() {
         const macAddressPattern = /^[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){5}$/;
         const macAddress = document.getElementById('macAddress').value;
+
         if (!macAddressPattern.test(macAddress)) {
-            alert('Please enter a valid RPi WiFi MAC address.');
-            return false; // Prevent form submission if validation fails
+            alert('Please enter a valid RPi WiFi MAC address (format: AA:BB:CC:DD:EE:FF).');
+            return false;
         }
-        // Additional validation for IP Address here if needed
-        return true; // Allow form submission if all validations pass
+
+        // Additional validation (e.g., IP address) can be added here
+        return true;
     }
 </script>
 
