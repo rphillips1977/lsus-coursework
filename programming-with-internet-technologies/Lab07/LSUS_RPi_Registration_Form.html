@@ -4,55 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSUS RPi Registration</title>
+    
     <style>
-        /* Basic styles for the form and its elements */
+        /* === Page Styling === */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Light background for the page */
-            color: #333; /* Default text color */
-            padding: 20px; /* Padding around the entire body to avoid edge touch */
+            background-color: #f9f9f9; /* Soft neutral background */
+            color: #333;
+            padding: 20px;
         }
+
+        /* === Form Container Styling === */
         .lsus-form {
-            background-color: #fff; /* White background for the form area */
-            border: 1px solid #ddd; /* Slight border around the form for definition */
-            padding: 20px; /* Padding inside the form for spacing */
-            border-radius: 5px; /* Rounded corners for the form */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 0 auto; /* Center form horizontally */
         }
+
         .lsus-form h2 {
-            color: #4b0082; /* LSU purple for the form heading */
+            color: #4b0082; /* LSUS purple */
         }
-        .lsus-form label, .lsus-form input, .lsus-form select, .lsus-form textarea, .submit-btn {
-            display: block; /* Make elements block to stack vertically */
-            width: 100%; /* Use full container width */
-            margin-bottom: 10px; /* Spacing between elements */
+
+        /* === Input & Label Styling === */
+        .lsus-form label,
+        .lsus-form input,
+        .lsus-form select,
+        .lsus-form textarea,
+        .submit-btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
         }
-        .lsus-form input[type=text], .lsus-form input[type=email], .lsus-form select, .lsus-form textarea {
-            padding: 8px; /* Padding inside elements for aesthetics */
-            border-radius: 4px; /* Rounded corners for input fields */
-            border: 1px solid #ccc; /* Light border for inputs */
+
+        .lsus-form input[type="text"],
+        .lsus-form input[type="email"],
+        .lsus-form select,
+        .lsus-form textarea {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
         }
-        .lsus-form input[type=checkbox], .lsus-form input[type=radio] {
-            margin-right: 5px; /* Spacing to the right of checkboxes and radio buttons */
+
+        .lsus-form input[type="checkbox"],
+        .lsus-form input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
         }
+
         .lsus-form .submit-btn {
-            background-color: #ffd700; /* LSU gold for the submit button */
-            color: white; /* Text color for the button */
-            padding: 10px 15px; /* Padding inside the button */
-            border: none; /* No border for the button */
-            cursor: pointer; /* Pointer cursor on hover */
-            font-size: 16px; /* Larger font size for the button */
+            background-color: #ffd700; /* LSU gold */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
+<!-- === RPi Registration Form === -->
 <div class="lsus-form">
     <h2>LSUS RPi Registration Form</h2>
-    <!-- Placeholder for the LSUS logo -->
+
+    <!-- University branding -->
     <img src="LSUSAnchor.jpg" alt="LSUS Logo" style="max-width: 100px; margin-bottom: 20px;">
-    <!-- Form begins here -->
+
+    <!-- Form action points to PHP script for processing -->
     <form id="registrationForm" action="submit_form.php" method="post" onsubmit="return validateForm()">
-        <!-- Input fields for user data -->
+
+        <!-- Required personal information -->
         <label for="firstName">First name:</label>
         <input type="text" id="firstName" name="firstName" required>
 
@@ -68,6 +92,7 @@
         <label for="macAddress">RPi WiFi MAC address:</label>
         <input type="text" id="macAddress" name="macAddress" placeholder="XX:XX:XX:XX:XX:XX" required>
 
+        <!-- Select Raspberry Pi type from dropdown -->
         <label for="rpiType">RPi Type:</label>
         <select id="rpiType" name="rpiType" required>
             <option value="RPi 5">RPi 5</option>
@@ -78,17 +103,17 @@
             <option value="RPi-Top">RPi-Top</option>
         </select>
 
-        <!-- Checkboxes for course selection -->
+        <!-- Multi-select course options -->
         <fieldset>
             <legend>Courses RPi used for:</legend>
-            <label><input type="checkbox" name="courses" value="CSC242">CSC242</label>
-            <label><input type="checkbox" name="courses" value="CSC315">CSC315</label>
-            <label><input type="checkbox" name="courses" value="CSC382">CSC382</label>
-            <label><input type="checkbox" name="courses" value="CSC435/635">CSC435/635</label>
-            <label><input type="checkbox" name="courses" value="Other">Other</label>
+            <label><input type="checkbox" name="courses[]" value="CSC242">CSC242</label>
+            <label><input type="checkbox" name="courses[]" value="CSC315">CSC315</label>
+            <label><input type="checkbox" name="courses[]" value="CSC382">CSC382</label>
+            <label><input type="checkbox" name="courses[]" value="CSC435/635">CSC435/635</label>
+            <label><input type="checkbox" name="courses[]" value="Other">Other</label>
         </fieldset>
 
-        <!-- Radio buttons for academic level -->
+        <!-- Select academic level (single choice) -->
         <fieldset>
             <legend>Academic level:</legend>
             <label><input type="radio" name="academicLevel" value="Freshman" required>Freshman</label>
@@ -98,20 +123,27 @@
             <label><input type="radio" name="academicLevel" value="Graduate">Graduate</label>
         </fieldset>
 
+        <!-- Form submission -->
         <button type="submit" class="submit-btn">Submit</button>
     </form>
 </div>
 
+<!-- === Client-side MAC Address Validation === -->
 <script>
-    // JavaScript function to validate the RPi WiFi MAC address format
+    /**
+     * Validates MAC address format before form submission.
+     * Format: 6 pairs of hex digits separated by colons (e.g., AA:BB:CC:DD:EE:FF)
+     */
     function validateForm() {
         const macAddressPattern = /^[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){5}$/;
         const macAddress = document.getElementById('macAddress').value;
+        
         if (!macAddressPattern.test(macAddress)) {
-            alert('Please enter a valid RPi WiFi MAC address.');
-            return false; // Prevent form submission if validation fails
+            alert('Please enter a valid RPi WiFi MAC address in the format XX:XX:XX:XX:XX:XX.');
+            return false; // Cancel form submission if invalid
         }
-        return true; // Allow form submission if all validations pass
+
+        return true; // Allow form submission if all checks pass
     }
 </script>
 
