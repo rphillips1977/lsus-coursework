@@ -1,44 +1,30 @@
-# Programming with Internet Technologies (CSC 635)
+# Programming with Internet Technologies (CSC 635 - Spring 2024)
 
-This folder contains assignments and projects from my CSC 635 course at LSUS. These examples demonstrate skills in HTML, CSS, JavaScript, and web development fundamentals.
+This folder contains web development projects completed for the Programming with Internet Technologies course at LSUS.
 
----
+## Course Overview
+This course introduced full-stack web development principles. Topics covered include:
 
-## 📁 Projects Included
+- Web architecture and HTTP
+- HTML and semantic structure
+- CSS styling and layout techniques
+- JavaScript for dynamic behavior
+- Basic server-side scripting with PHP
 
-### 🔹 Final Project
-A comprehensive personal website project featuring:
-- Hobbies
-- Biography
-- Service history
-- Image galleries
-- Feedback form
-- Date/time script
+## Projects Included
+- Multi-page HTML websites with navigation
+- Responsive layouts using CSS
+- JavaScript-driven interactivity
+- Simple contact form with form validation and PHP backend
 
-### 🔹 Lab Assignments
-- **Lab03:** Star Trek-themed layout with JavaScript date stamp
-- **Lab07:** Advanced styling and layout using CSS and forms
-
-### 🔹 Exams
-- **Exam1 & Exam2:** Practical HTML/CSS work, form elements, layout, and user experience
-
-### 🔹 Multiplication Table Visualizations
-- **Rainbow, Grayscale, No Shade:** HTML/JS-powered math tables with creative visual styles
-
----
-
-## 🛠️ Technologies Used
+## Technologies Used
 - HTML5
 - CSS3
-- JavaScript (vanilla)
-- Responsive layouts
-- Forms & input validation
+- JavaScript
+- PHP
+- Local server environment (XAMPP/WAMP)
 
----
-
-## 📫 Contact
-
-**Robert Lovelace**  
-[LinkedIn](https://www.linkedin.com/in/lovelacer)  
-📧 robert.phillips77@gmail.com
-
+## Highlights
+- Built functional static and dynamic web pages
+- Practiced DOM manipulation and event handling
+- Applied best practices in accessibility and design
