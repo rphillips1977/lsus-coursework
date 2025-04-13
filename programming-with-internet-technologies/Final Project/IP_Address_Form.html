@@ -1,3 +1,13 @@
+<!-- 
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Semester: Spring 2024
+    File: ip-form.html
+    Description: HTML page for collecting LSUS student IP registration information.
+                 Includes inputs for student details, RPi device info, course usage,
+                 academic level, and reCAPTCHA protection.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,39 +18,43 @@
         /* Basic styles for the form and its elements */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Light background for the page */
-            color: #333; /* Default text color */
-            padding: 20px; /* Padding around the entire body to avoid edge touch */
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
         }
         .lsus-form {
-            background-color: #fff; /* White background for the form area */
-            border: 1px solid #ddd; /* Slight border around the form for definition */
-            padding: 20px; /* Padding inside the form for spacing */
-            border-radius: 5px; /* Rounded corners for the form */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
         }
         .lsus-form h2 {
-            color: #4b0082; /* LSU purple for the form heading */
+            color: #4b0082;
         }
         .lsus-form label, .lsus-form input, .lsus-form select, .lsus-form textarea, .submit-btn {
-            display: block; /* Make elements block to stack vertically */
-            width: 100%; /* Use full container width */
-            margin-bottom: 10px; /* Spacing between elements */
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
         }
-        .lsus-form input[type=text], .lsus-form input[type=email], .lsus-form select, .lsus-form textarea {
-            padding: 8px; /* Padding inside elements for aesthetics */
-            border-radius: 4px; /* Rounded corners for input fields */
-            border: 1px solid #ccc; /* Light border for inputs */
+        .lsus-form input[type=text], 
+        .lsus-form input[type=email], 
+        .lsus-form select, 
+        .lsus-form textarea {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
         }
-        .lsus-form input[type=checkbox], .lsus-form input[type=radio] {
-            margin-right: 5px; /* Spacing to the right of checkboxes and radio buttons */
+        .lsus-form input[type=checkbox], 
+        .lsus-form input[type=radio] {
+            margin-right: 5px;
         }
         .lsus-form .submit-btn {
-            background-color: #ffd700; /* LSU gold for the submit button */
-            color: white; /* Text color for the button */
-            padding: 10px 15px; /* Padding inside the button */
-            border: none; /* No border for the button */
-            cursor: pointer; /* Pointer cursor on hover */
-            font-size: 16px; /* Larger font size for the button */
+            background-color: #ffd700;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -48,11 +62,14 @@
 
 <div class="lsus-form">
     <h2>LSUS IP Address Form</h2>
+
     <!-- Placeholder for the LSUS logo -->
     <img src="LSUSAnchor.jpg" alt="LSUS Logo" style="max-width: 100px; margin-bottom: 20px;">
-    <!-- Form begins here -->
+
+    <!-- Begin form -->
     <form id="registrationForm" action="submit_form.php" method="post" onsubmit="return validateForm()">
-        <!-- Input fields for user data -->
+        
+        <!-- Student information inputs -->
         <label for="firstName">First name:</label>
         <input type="text" id="firstName" name="firstName" required>
 
@@ -65,10 +82,11 @@
         <label for="email">LSUS email address:</label>
         <input type="email" id="email" name="email" required>
 
+        <!-- Device info -->
         <label for="macAddress">RPi WiFi MAC address:</label>
         <input type="text" id="macAddress" name="macAddress" placeholder="XX:XX:XX:XX:XX:XX" required>
-		
-		<label for="ipAddress">RPi IP Address:</label>
+
+        <label for="ipAddress">RPi IP Address:</label>
         <input type="text" id="ipAddress" name="ipAddress" placeholder="192.168.1.1" required>
 
         <label for="rpiType">RPi Type:</label>
@@ -81,7 +99,7 @@
             <option value="RPi-Top">RPi-Top</option>
         </select>
 
-        <!-- Checkboxes for course selection -->
+        <!-- Course usage checkboxes -->
         <fieldset>
             <legend>Courses RPi used for:</legend>
             <label><input type="checkbox" name="courses[]" value="CSC242">CSC242</label>
@@ -91,7 +109,7 @@
             <label><input type="checkbox" name="courses[]" value="Other">Other</label>
         </fieldset>
 
-        <!-- Radio buttons for academic level -->
+        <!-- Academic level radio buttons -->
         <fieldset>
             <legend>Academic level:</legend>
             <label><input type="radio" name="academicLevel" value="Freshman" required>Freshman</label>
@@ -101,25 +119,27 @@
             <label><input type="radio" name="academicLevel" value="Graduate">Graduate</label>
         </fieldset>
 
-        <!-- Google reCAPTCHA -->
+        <!-- reCAPTCHA -->
         <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
 
+        <!-- Submit button -->
         <button type="submit" class="submit-btn">Submit</button>
     </form>
 </div>
 
+<!-- Load reCAPTCHA and form validation -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
-    // JavaScript function to validate the RPi WiFi MAC address format
+    // JavaScript validation for MAC address format
     function validateForm() {
         const macAddressPattern = /^[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){5}$/;
         const macAddress = document.getElementById('macAddress').value;
         if (!macAddressPattern.test(macAddress)) {
             alert('Please enter a valid RPi WiFi MAC address.');
-            return false; // Prevent form submission if validation fails
+            return false;
         }
-        // Add additional validation for reCAPTCHA here if needed
-        return true; // Allow form submission if all validations pass
+        // Additional validation (e.g., reCAPTCHA) could go here
+        return true;
     }
 </script>
 
