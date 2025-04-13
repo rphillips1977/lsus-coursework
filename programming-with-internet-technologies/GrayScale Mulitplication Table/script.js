@@ -1,4 +1,14 @@
 /**
+ * Author: Robert Lovelace
+ * Course: CSC 635 Programming with Internet Technologies
+ * Semester: Spring 2024
+ * File: script.js
+ * Description: Dynamically generates a 12x12 multiplication table in the browser
+ *              with shaded backgrounds based on product values. Grayscale intensity
+ *              and text color are calculated to ensure readability.
+ */
+
+/**
  * Dynamically generates a 12x12 multiplication table
  * with background shading based on product value.
  */
