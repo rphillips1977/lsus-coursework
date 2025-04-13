@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!-- 
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Assignment: Lab 03 – Personal Web Page
+    Description:
+        This web page introduces the student through personal hobbies, 
+        military service, favorite media, and includes multimedia elements and JavaScript integration.
+    Semester: Spring 2024
+-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,7 +22,7 @@
     <!-- Page Heading -->
     <h1>Robert L. Lovelace</h1>
 
-    <!-- Embedded Flickr Image with proper attributes -->
+    <!-- Embedded Flickr Image -->
     <a data-flickr-embed="false" href="https://www.flickr.com/photos/200013468@N07/53509581531/in/album-72177720314571321/" title="Star Trek Image">
         <img src="https://live.staticflickr.com/65535/53509581531_03f014d199_b.jpg" width="300" height="150" alt="Star Trek Banner"/>
     </a>
@@ -36,7 +45,7 @@
         </li>
     </ul>
 
-    <!-- Military Experience Section -->
+    <!-- Military Experience -->
     <p>I served two tours aboard the 
         <a href="https://www.airpac.navy.mil/Organization/USS-John-C-Stennis-CVN-74/" target="_blank">
             <b>U.S.S. John C. Stennis (CVN-74)</b>
@@ -65,14 +74,13 @@
 
     <!-- Star Trek Favorites -->
     <p>One of my favorite franchises is Star Trek. Below are some of my favorite series:</p>
-
     <ul class="startrek">
         <li><a href="https://www.imdb.com/title/tt0112178/">Star Trek: Voyager</a></li>
         <li><a href="https://www.imdb.com/title/tt0106145/">Star Trek: Deep Space Nine</a></li>
         <li><a href="https://www.imdb.com/title/tt8806524/">Star Trek: Picard</a></li>
     </ul>
 
-    <!-- Feedback and Contact Links -->
+    <!-- Feedback Link and Contact Info -->
     <p>
         If you have feedback on how I can improve this site, click 
         <a href="https://sun.cs.lsus.edu/~rlovelace/CSC635/c929a602a02ed9f934314c5884e61662ce6489d8e471e1348d5b439df855efad8012a3dd6347b24d/Lab3/index2.html" target="_blank">here</a> 
@@ -84,8 +92,8 @@
     <p><b>Current Date and Time:</b></p>
     <p id="date"></p>
 
+    <!-- JavaScript to insert current date/time -->
     <script>
-        // Display current date and time
         const d = new Date();
         document.getElementById("date").innerHTML = d;
     </script>
