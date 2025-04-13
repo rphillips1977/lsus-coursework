@@ -1,18 +1,35 @@
-create database db1003
+-- =============================================
+-- Author:        Robert Lovelace
+-- Semester:      Spring 2024
+-- Description:   Creates a basic Employees database and table,
+--                then retrieves all records from the table.
+-- =============================================
 
-go
+-- Create the database
+CREATE DATABASE db1003;
+GO
 
-use db1003
+-- Use the newly created database
+USE db1003;
+GO
 
-go
-
-Create Table Employees
-(
-	FirstName Varchar(10),
-	LastName Varchar (10),
-	ID Varchar (10)
+-- =============================================
+-- Table: Employees
+-- Author:        Robert Lovelace
+-- Semester:      Spring 2024
+-- Description:   Stores basic employee information including first name, last name, and ID.
+-- =============================================
+CREATE TABLE Employees (
+    FirstName VARCHAR(10),
+    LastName VARCHAR(10),
+    ID VARCHAR(10)
 );
+GO
 
-
-
-Select * From Employees;
+-- =============================================
+-- Query: Select all records from the Employees table
+-- Author:        Robert Lovelace
+-- Semester:      Spring 2024
+-- =============================================
+SELECT * FROM Employees;
+GO
