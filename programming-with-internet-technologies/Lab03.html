@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!-- 
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Assignment: Lab 03 – Basic HTML with JavaScript Integration
+    Description:
+        This HTML document displays an image, a header, and dynamically renders
+        the current date using JavaScript.
+    Semester: Spring 2024
+-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,21 +15,21 @@
 </head>
 
 <body>
-    <!-- Display image with proper attribute spelling -->
+    <!-- Display Star Trek logo -->
     <img src="StarTrek.jpg" alt="Star Trek Logo">
 
-    <!-- Page header -->
+    <!-- Lab heading -->
     <header>
         <h3>Lab 03 Page</h3>
     </header>
 
-    <!-- Paragraph where the current date will be displayed -->
+    <!-- Placeholder for the current date -->
     <p id="date"></p>
 
-    <!-- Script to dynamically display the current date using JavaScript -->
+    <!-- Script to insert the current date into the paragraph -->
     <script>
-        const d = new Date(); // Get current date and time
-        document.getElementById("date").innerHTML = d; // Output to <p> element
+        const d = new Date(); // Get the current date and time
+        document.getElementById("date").innerHTML = d; // Display it inside the <p> element
     </script>
 </body>
 </html>
