@@ -1,3 +1,12 @@
+/* 
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Semester: Spring 2024
+    File: style.css
+    Description: Styles layout and presentation for the Container Metrics Calculator web page,
+                 including input fields, results table, and assignment info formatting.
+*/
+
 /* Basic font setting */
 body {
     font-family: Arial, sans-serif;
