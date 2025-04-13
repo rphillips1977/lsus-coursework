@@ -1,4 +1,14 @@
 <?php
+/**
+ * Author: Robert Lovelace
+ * Course: CSC 635 Programming with Internet Technologies
+ * Semester: Spring 2024
+ * File: submit_form.php
+ * Description: Handles POST requests from the LSUS RPi registration form.
+ *              Sanitizes user input, generates an HTML confirmation page,
+ *              and writes the confirmation to a file.
+ */
+
 // Ensure the script only runs when accessed via a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -10,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email         = htmlspecialchars($_POST['email']);
     $macAddress    = htmlspecialchars($_POST['macAddress']);
     $rpiType       = htmlspecialchars($_POST['rpiType']);
-    $courses       = $_POST['courses']; // This is an array, no need to sanitize here—handled below
+    $courses       = $_POST['courses']; // This is an array, handled below
     $academicLevel = htmlspecialchars($_POST['academicLevel']);
 
     // === Build HTML Confirmation Content ===
@@ -31,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p><strong>Courses RPi Used For:</strong></p>
     <ul>";
 
-    // Loop through selected courses and escape each entry before output
+    // Loop through selected courses and escape each entry
     foreach ($courses as $course) {
         $htmlContent .= "<li>" . htmlspecialchars($course) . "</li>";
     }
@@ -42,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </html>";
 
     // === Save Confirmation to a File ===
-    // Save the generated confirmation to an HTML file (overwrites each time)
+    // Save the generated confirmation to an HTML file (overwrites previous file)
     file_put_contents('registration.html', $htmlContent);
 
     // === Output Confirmation Message ===
