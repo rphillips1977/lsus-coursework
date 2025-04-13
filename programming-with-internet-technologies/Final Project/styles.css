@@ -1,3 +1,13 @@
+/*
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Semester: Spring 2024
+    File: styles.css
+    Description: Stylesheet for the LSUS RPi Registration Form. Includes layout,
+                 typography, form styling, and branding elements for a responsive,
+                 user-friendly web interface.
+*/
+
 /* === Base Layout and Typography === */
 body {
     font-family: Arial, sans-serif;         /* Clean, readable font */
