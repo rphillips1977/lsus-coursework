@@ -1,4 +1,13 @@
-// Import necessary Java I/O classes
+//=============================================================================
+// Author: Robert Lovelace
+// Course: CSC 635 Programming with Internet Technologies
+// Assignment: CSV to HTML Table Generator
+// Description:
+//     This Java program reads a CSV file passed as a command-line argument
+//     and outputs the content as an HTML page with a styled table.
+// Semester: Spring 2024
+//=============================================================================
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,13 +15,12 @@ import java.io.IOException;
 /**
  * HTMLTableGenerator
  * -------------------
- * This program reads a CSV file passed via command-line argument,
- * and outputs an HTML file structure with the CSV data printed in table format.
+ * Converts CSV input into an HTML table format and prints it to the console.
  */
 public class HTMLTableGenerator {
 
     public static void main(String[] args) {
-        // Ensure a file path is provided
+        // Ensure a CSV file path is provided as a command-line argument
         if (args.length == 0) {
             System.out.println("Usage: java HTMLTableGenerator <csv-file-path>");
             return;
@@ -21,10 +29,10 @@ public class HTMLTableGenerator {
         String line;
 
         try {
-            // Create a BufferedReader to read the CSV file line-by-line
+            // Open the CSV file using BufferedReader
             BufferedReader br = new BufferedReader(new FileReader(args[0]));
 
-            // Begin HTML structure
+            // Begin HTML structure and inline styling
             System.out.println("<!DOCTYPE html>");
             System.out.println("<html>");
             System.out.println("  <head>");
@@ -38,25 +46,23 @@ public class HTMLTableGenerator {
             System.out.println("    <h2>CSV Data as HTML Table</h2>");
             System.out.println("    <table>");
 
-            // Read each line of the CSV file
+            // Read each line, split by commas, and format as table rows
             while ((line = br.readLine()) != null) {
                 String[] strTokens = line.split(",");
 
-                // Start a new row for each line
                 System.out.println("      <tr>");
                 for (String token : strTokens) {
-                    // Output each cell as a <td>
                     System.out.println("        <td>" + token.trim() + "</td>");
                 }
                 System.out.println("      </tr>");
             }
 
-            // Close table and HTML structure
+            // Close table and HTML document
             System.out.println("    </table>");
             System.out.println("  </body>");
             System.out.println("</html>");
 
-            br.close(); // Always close the BufferedReader
+            br.close(); // Properly close file resource
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
             e.printStackTrace();
