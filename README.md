@@ -1,51 +1,31 @@
 # LSUS Computer Science Coursework
+# LSUS Coursework Repository
 
-This repository showcases selected assignments and projects from my coursework at Louisiana State University Shreveport (LSUS). It highlights hands-on experience with relational databases, SQL scripting, stored procedures, triggers, and full-stack web development.
+This repository showcases coursework completed as part of the Master of Science in Computer Science program at Louisiana State University Shreveport (LSUS). It includes hands-on academic projects demonstrating knowledge in database systems, full-stack web development, and internet technologies.
 
----
+## Course Folders
 
-## 📁 Coursework Categories
+### 1. Programming with Internet Technologies (CSC 635 - Spring 2024)
+Focuses on client-server architecture, HTML, CSS, JavaScript, and server-side scripting.
+- Projects demonstrate interactive front-end designs and simple back-end functionality.
+- Technologies: HTML5, CSS3, JavaScript, PHP
 
-### 📂 Database Implementation (CSC 625 - Spring 2024)
-Projects focused on relational database design and administration. Topics include:
-- ER diagrams
-- Table creation, data types, and constraints
-- Querying with SELECT, JOINs, and subqueries
-- Stored procedures for employee/product management
-- Triggers for enforcing business rules and automation
+[View Folder ›](./programming-with-internet-technologies)
 
-📍 Folder: `database-implementation/`  
-📍 Subfolders: `stored-procedures/`, `triggers/`
+### 2. Database Implementation (CSC 625 - Spring 2024)
+Covers relational database design, SQL scripting, stored procedures, triggers, and views.
+- Includes ER diagrams, normalization exercises, and database scripts.
+- Technologies: MySQL, SQL
 
----
-
-### 📂 Programming with Internet Technologies (CSC 635 - Spring 2024)
-
-Projects demonstrating front-end and server-side web development:
-- HTML5/CSS3-based layout and styling
-- JavaScript for dynamic page elements (e.g., date/time, form behavior)
-- PHP, forms, and web interactivity
-- A full personal homepage project with links, biography, and media
-- Multiplication table visualizations (rainbow, grayscale, no shade)
-- Custom forms with validation
-- Final website project
-
-📍 Folder: `programming-with-internet-technologies/`
+[View Folder ›](./database-implementation)
 
 ---
 
-## 🛠️ Technologies Used
-- **Languages & Tools:** SQL, MySQL, HTML5, CSS3, JavaScript, PHP, JSON
-- **Database Features:** Stored Procedures, Triggers, Indexing, Optimization
-- **Web Development:** Forms, Responsive Layouts, Multimedia, Client-side Scripting
-- **Version Control:** Git & GitHub
+## About Me
 
----
+I'm currently pursuing my M.S. in Computer Science at LSUS and recently earned my CompTIA DataSys+ certification. My goal is to transition from a software quality assurance background into data engineering or data analytics.
 
-## 📫 Contact
+## Contact
 
-**Robert Lovelace**  
-📍 Shreveport, LA  
-📧 robert.phillips77@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/lovelacer)  
-🔗 [GitHub Portfolio](https://github.com/rphillips1977/lsus-coursework)
+- GitHub: [@rphillips1977](https://github.com/rphillips1977)
+- LinkedIn: [linkedin.com/in/lovelacer](https://linkedin.com/in/lovelacer)
