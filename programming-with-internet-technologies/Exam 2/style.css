@@ -1,0 +1,39 @@
+/* Basic font setting */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style for input fields */
+#containerMetrics input[type="text"] {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style for the calculate button */
+#calculate {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Styles for the results table */
+#results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#results th, #results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#results th {
+    background-color: #f2f2f2;
+}
+
+/* Styling for assignment info */
+#assignmentInfo {
+    margin-bottom: 20px;
+}
