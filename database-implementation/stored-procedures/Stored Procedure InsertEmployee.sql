@@ -1,6 +1,6 @@
 -- ================================================================
 -- Author: Robert Lovelace
--- Course: CSC 635 Programming with Internet Technologies
+-- Course: CSC 625 Database Implementation
 -- Assignment: Stored Procedure Development – Insert and Delete
 -- Procedure Name: spInsertDelete
 -- Description:
