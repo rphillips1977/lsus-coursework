@@ -1,26 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSC 635 Lab03</title>
+</head>
 
+<body>
+    <!-- Display image with proper attribute spelling -->
+    <img src="StarTrek.jpg" alt="Star Trek Logo">
 
-<html>
-	<head>
-		<meta charset = 'utf-8'>
-			<title>CSC 635 Lab03</title>			
-	</head>
-	
-		<body>
-			<img source = "StarTrek.jpg" alt ="Star Trek Logo">
-			
-			<header>
-				<h3>Lab 03 Page</h3>
-			</header>
-			
-			<p id= "date"></p>
-				<script>
-					const d = new Date();
-					document.getElementById("date").innerHTML = d;
-				</script>
-		
-			
-			
-				
-		</body>
+    <!-- Page header -->
+    <header>
+        <h3>Lab 03 Page</h3>
+    </header>
+
+    <!-- Paragraph where the current date will be displayed -->
+    <p id="date"></p>
+
+    <!-- Script to dynamically display the current date using JavaScript -->
+    <script>
+        const d = new Date(); // Get current date and time
+        document.getElementById("date").innerHTML = d; // Output to <p> element
+    </script>
+</body>
 </html>
