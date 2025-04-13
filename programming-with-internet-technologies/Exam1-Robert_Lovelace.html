@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<!--
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Assignment: Exam 1 – Customer Satisfaction Survey
+    Description:
+        This HTML document presents a structured form for collecting user satisfaction feedback
+        about various service categories using emoji-based ratings. It also includes a
+        recommendation scale, contact information, and additional metadata input fields.
+    Semester: Spring 2024
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,101 +52,90 @@
 <body>
 
 <div class="form-container">
-    <!-- Form heading with user and organization info -->
+    <!-- Company and user information -->
     <h1 style="text-align:center;">Customer Services, Inc.</h1>
     <h3 style="text-align:center;">Robert Lovelace (Information Systems)</h3>
 
-    <!-- Section intro with gray background and white text -->
+    <!-- Instructions heading -->
     <div style="background-color:gray; color:white;">
         <p style="text-align:center;">How satisfied were you with the following during your visit?</p>
     </div>
 
-    <!-- === Satisfaction Table with Emojis and Labels === -->
+    <!-- Emoji-based satisfaction table -->
     <table class="tablepic">
         <tr>
             <td></td>
-            <!-- Emoji legend (Extremely satisfied to Extremely dissatisfied) -->
-            <td><img src=".../Emoji-5.png" alt="ES" width="30" height="30"></td>
-            <td><img src=".../Emoji-4.png" alt="SS" width="30" height="30"></td>
-            <td><img src=".../Emoji-3.png" alt="NSD" width="30" height="30"></td>
-            <td><img src=".../Emoji-2.png" alt="SD" width="30" height="30"></td>
-            <td><img src=".../Emoji-1.png" alt="ED" width="30" height="30"></td>
+            <td><img src=".../Emoji-5.png" alt="Extremely Satisfied" width="30" height="30"></td>
+            <td><img src=".../Emoji-4.png" alt="Somewhat Satisfied" width="30" height="30"></td>
+            <td><img src=".../Emoji-3.png" alt="Neutral" width="30" height="30"></td>
+            <td><img src=".../Emoji-2.png" alt="Somewhat Dissatisfied" width="30" height="30"></td>
+            <td><img src=".../Emoji-1.png" alt="Extremely Dissatisfied" width="30" height="30"></td>
         </tr>
 
-        <!-- Emoji labels -->
+        <!-- Labels for each emoji rating -->
         <tr>
             <td></td>
             <td>Extremely<br>satisfied</td>
             <td>Somewhat<br>satisfied</td>
-            <td>Neither<br>satisfied or<br>dissatisfied</td>
+            <td>Neutral</td>
             <td>Somewhat<br>dissatisfied</td>
             <td>Extremely<br>dissatisfied</td>
         </tr>
 
-        <!-- Feedback rows: Each service row has a corresponding set of radio buttons -->
-        <!-- Staff -->
+        <!-- Service category ratings -->
         <tr>
             <td>Staff:</td>
-            <td><input type="radio" name="staff" id="ES" checked></td>
-            <td style="background-color: lightgray;"><input type="radio" name="staff" id="SS"></td>
-            <td><input type="radio" name="staff" id="NSD"></td>
-            <td style="background-color: lightgray;"><input type="radio" name="staff" id="SD"></td>
-            <td><input type="radio" name="staff" id="ED"></td>
+            <td><input type="radio" name="staff" checked></td>
+            <td style="background-color: lightgray;"><input type="radio" name="staff"></td>
+            <td><input type="radio" name="staff"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="staff"></td>
+            <td><input type="radio" name="staff"></td>
             <td></td>
         </tr>
-
-        <!-- Amenities -->
         <tr>
             <td>Amenities:</td>
-            <td style="background-color: lightgray;"><input type="radio" name="Amenities" id="ES"></td>
-            <td><input type="radio" name="Amenities" id="SS" checked></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Amenities" id="NSD"></td>
-            <td><input type="radio" name="Amenities" id="SD"></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Amenities" id="ED"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Amenities"></td>
+            <td><input type="radio" name="Amenities" checked></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Amenities"></td>
+            <td><input type="radio" name="Amenities"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Amenities"></td>
             <td></td>
         </tr>
-
-        <!-- Cleanliness -->
         <tr>
             <td>Cleanliness:</td>
-            <td><input type="radio" name="Cleanliness" id="ES"></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Cleanliness" id="SS"></td>
-            <td><input type="radio" name="Cleanliness" id="NSD" checked></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Cleanliness" id="SD"></td>
-            <td><input type="radio" name="Cleanliness" id="ED"></td>
+            <td><input type="radio" name="Cleanliness"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Cleanliness"></td>
+            <td><input type="radio" name="Cleanliness" checked></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Cleanliness"></td>
+            <td><input type="radio" name="Cleanliness"></td>
             <td></td>
         </tr>
-
-        <!-- Food -->
         <tr>
             <td>Food:</td>
-            <td style="background-color: lightgray;"><input type="radio" name="Food" id="ES"></td>
-            <td><input type="radio" name="Food" id="SS"></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Food" id="NSD"></td>
-            <td><input type="radio" name="Food" id="SD" checked></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Food" id="ED"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Food"></td>
+            <td><input type="radio" name="Food"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Food"></td>
+            <td><input type="radio" name="Food" checked></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Food"></td>
             <td></td>
         </tr>
-
-        <!-- Location -->
         <tr>
             <td>Location:</td>
-            <td><input type="radio" name="Location" id="ES"></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Location" id="SS"></td>
-            <td><input type="radio" name="Location" id="NSD"></td>
-            <td style="background-color: lightgray;"><input type="radio" name="Location" id="SD"></td>
-            <td><input type="radio" name="Location" id="ED" checked></td>
+            <td><input type="radio" name="Location"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Location"></td>
+            <td><input type="radio" name="Location"></td>
+            <td style="background-color: lightgray;"><input type="radio" name="Location"></td>
+            <td><input type="radio" name="Location" checked></td>
         </tr>
     </table>
 
-    <!-- === Recommendation Scale === -->
+    <!-- Recommendation section with 0-10 scale -->
     <table>
         <tr>
             <td>On a scale from 0 to 10, how likely are you to recommend this product?</td>
         </tr>
     </table>
 
-    <!-- Label legends -->
     <table class="recommend">
         <tr>
             <td style="text-align:left">Not at all likely</td>
@@ -145,61 +144,50 @@
         </tr>
     </table>
 
-    <!-- Scale radio buttons from 0–10 -->
     <table class="recommend">
         <tr>
-            <!-- Scale labels -->
+            <!-- Numeric labels -->
             <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
         </tr>
         <tr>
-            <!-- Radio button inputs -->
-            <td><input type="radio" name="option" id="r0"></td>
-            <td><input type="radio" name="option" id="r1"></td>
-            <td><input type="radio" name="option" id="r2"></td>
-            <td><input type="radio" name="option" id="r3"></td>
-            <td><input type="radio" name="option" id="r4"></td>
-            <td><input type="radio" name="option" id="r5" checked></td>
-            <td><input type="radio" name="option" id="r6"></td>
-            <td><input type="radio" name="option" id="r7"></td>
-            <td><input type="radio" name="option" id="r8"></td>
-            <td><input type="radio" name="option" id="r9"></td>
-            <td><input type="radio" name="option" id="r10"></td>
+            <!-- Radio inputs for rating -->
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option" checked></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
+            <td><input type="radio" name="option"></td>
         </tr>
     </table>
 
-    <!-- === Contact & Additional Info Form === -->
+    <!-- Additional form inputs: guest count, contact, date, color -->
     <form action="/action_page.php">
         <table class="information">
             <tr>
-                <!-- Guest count -->
                 <td style="text-align:center">
                     <label for="quantity">Guests:</label>
                     <input type="number" id="quantity" name="quantity" size="5" min="1" max="4" value="3">
                 </td>
-
-                <!-- Email input -->
                 <td>
                     <label for="email">Email address:</label>
                     <input type="email" id="email" name="email" size="40" required placeholder="Enter email here">
                 </td>
-
-                <!-- Checkbox input -->
                 <td>
                     <label for="checkbox">A+?</label>
                     <input type="checkbox" id="checkbox" name="checkbox">
                 </td>
             </tr>
-
             <tr>
-                <!-- Date picker -->
                 <td>
                     <label for="date">Date of your stay:</label>
                     <input type="date" id="date" name="date">
                 </td>
-
                 <td></td>
-
-                <!-- Color picker -->
                 <td>
                     <label for="color">Color:</label>
                     <input type="color" id="color" name="color">
@@ -207,13 +195,11 @@
             </tr>
         </table>
 
-        <!-- Submit and reset controls -->
-        <table>
-            <p style="text-align:center">
-                <input type="reset" value="Clear">
-                <input type="submit" value="Submit">
-            </p>
-        </table>
+        <!-- Form submission controls -->
+        <p style="text-align:center">
+            <input type="reset" value="Clear">
+            <input type="submit" value="Submit">
+        </p>
     </form>
 </div>
 
