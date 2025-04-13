@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and page title -->
     <meta charset="UTF-8">
     <title>Multiplication Table</title>
+
+    <!-- Inline CSS to style the multiplication table -->
     <style>
+        /* Ensure table borders are collapsed into a single border between cells */
         table {
             border-collapse: collapse;
-            margin: 20px auto;
+            margin: 20px auto; /* Center the table horizontally with vertical spacing */
         }
+
+        /* Style both table header and data cells */
         td, th {
-            border: 1px solid black;
-            padding: 5px 10px;
-            text-align: center;
+            border: 1px solid black;  /* Add a solid border to each cell */
+            padding: 5px 10px;        /* Add spacing inside cells for readability */
+            text-align: center;       /* Center-align text horizontally */
         }
+
+        /* Give header cells a light background for visual distinction */
         th {
             background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
+
+    <!-- Empty table element to be populated by JavaScript -->
     <table id="multiplicationTable"></table>
 
     <script>
-        // Function to generate the multiplication table and insert it into the HTML table element
+        /**
+         * Generates a multiplication table from 0 to 12
+         * and dynamically inserts it into the HTML table element.
+         */
         function generateMultiplicationTable() {
+            // Get reference to the table element in the DOM
             const tableElement = document.getElementById('multiplicationTable');
 
-            // Create the header row
-            let headerRow = '<tr><th>x</th>';
+            // === Create Header Row ===
+            let headerRow = '<tr><th>x</th>'; // Start row with "x" label for clarity
             for (let col = 0; col <= 12; col++) {
-                headerRow += `<th>${col}</th>`;
+                headerRow += `<th>${col}</th>`; // Add column headers from 0 to 12
             }
             headerRow += '</tr>';
             tableElement.innerHTML += headerRow;
 
-            // Fill in the table rows
+            // === Populate Table Body ===
             for (let row = 0; row <= 12; row++) {
-                let tableRow = `<tr><th>${row}</th>`;
+                let tableRow = `<tr><th>${row}</th>`; // Start each row with its row number as header
+
                 for (let col = 0; col <= 12; col++) {
-                    // Compute the product for each cell
-                    tableRow += `<td>${row * col}</td>`;
+                    const product = row * col; // Calculate the product of current row and column
+                    tableRow += `<td>${product}</td>`; // Insert product into a table cell
                 }
-                tableRow += '</tr>';
-                tableElement.innerHTML += tableRow;
+
+                tableRow += '</tr>'; // Close the current row
+                tableElement.innerHTML += tableRow; // Append row to the table
             }
         }
 
-        // Generate and display the multiplication table
+        // Call the function on page load to render the multiplication table
         generateMultiplicationTable();
     </script>
 </body>
