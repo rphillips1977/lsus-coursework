@@ -1,4 +1,3 @@
-# LSUS Computer Science Coursework
 # LSUS Coursework Repository
 
 This repository showcases coursework completed as part of the Master of Science in Computer Science program at Louisiana State University Shreveport (LSUS). It includes hands-on academic projects demonstrating knowledge in database systems, full-stack web development, and internet technologies.
