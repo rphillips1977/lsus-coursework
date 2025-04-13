@@ -1,7 +1,20 @@
+-- ================================================================
+-- Author: Robert Lovelace
+-- Course: CSC 635 Programming with Internet Technologies
+-- Assignment: Stored Procedure Development – Insert and Delete
+-- Procedure Name: spInsertDelete
+-- Description:
+--     This SQL stored procedure performs two tasks:
+--     1. Inserts a new employee into the Employee table.
+--     2. Deletes a product from the Product table based on matching
+--        ProductID and ProductName.
+-- Semester: Spring 2024
+-- ================================================================
+
 USE [Spring2024];
 GO
 
--- Enable ANSI_NULLS and QUOTED_IDENTIFIER for compatibility
+-- Enable ANSI_NULLS and QUOTED_IDENTIFIER for best practices
 SET ANSI_NULLS ON;
 GO
 SET QUOTED_IDENTIFIER ON;
@@ -12,18 +25,7 @@ IF OBJECT_ID('dbo.spInsertDelete', 'P') IS NOT NULL
     DROP PROCEDURE dbo.spInsertDelete;
 GO
 
--- =============================================
--- Author: Robert Lovelace 
--- Procedure: spInsertDelete
--- Description: 
---   Inserts a new employee into the Employee table 
---   and deletes a product from the Product table based on ID and name.
--- Parameters:
---   @ID          = Employee ID
---   @FirstName   = Employee first name
---   @ProductID   = Product ID to delete
---   @ProductName = Product name to delete
--- =============================================
+-- Create the stored procedure
 CREATE PROCEDURE dbo.spInsertDelete
     @ID INT,
     @FirstName VARCHAR(100),
@@ -33,15 +35,21 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Insert employee into Employee table
+    -- Insert a new employee record
     INSERT INTO Employee (Id, FirstName)
     VALUES (@ID, @FirstName);
 
-    -- Delete product from Product table matching both ID and name
+    -- Delete a product record that matches both ID and name
     DELETE FROM Product
     WHERE ProductID = @ProductID AND ProductName = @ProductName;
-END
+END;
 GO
 
--- Example execution
--- EXEC dbo.spInsertDelete @ID = 1, @FirstName = 'Alice', @ProductID = 101, @ProductName = 'Mouse';
+-- ================================
+-- Example Execution
+-- ================================
+-- EXEC dbo.spInsertDelete 
+--     @ID = 1, 
+--     @FirstName = 'Alice', 
+--     @ProductID = 101, 
+--     @ProductName = 'Mouse';
