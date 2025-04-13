@@ -1,65 +1,64 @@
-// Main function to generate a multiplication table from 0x0 to 12x12
+/**
+ * Generates a 13x13 multiplication table (0–12) and populates it in the HTML element
+ * with dynamic background colors based on the product value.
+ */
 function generateMultiplicationTable() {
-    // Get the table element from the HTML where the multiplication table will be rendered
+    // Get reference to the target <table> element
     const tableElement = document.getElementById('multiplicationTable');
 
-    // The maximum value that can appear in the table (12 x 12 = 144)
+    // The highest product in a 12x12 table (used for color normalization)
     const maxValue = 12 * 12;
 
-    // Function to calculate a rainbow gradient color based on the product value
+    /**
+     * Converts a numeric product value into a rainbow gradient color.
+     * The color becomes more saturated as the product increases.
+     *
+     * @param {number} value - The multiplication product
+     * @returns {string} - RGB string for inline CSS background-color
+     */
     function calculateRainbowColor(value) {
-        // Normalize the value between 0 and 1
-        const f = value / maxValue;
+        const f = value / maxValue;           // Normalize value to 0–1
+        const a = (1 - f) / 0.2;              // Segment calculator
+        const X = Math.floor(a);              // Determines color band
+        const Y = Math.floor(255 * (a - X));  // Interpolation within the band
 
-        // Map the normalized value to a color range
-        const a = (1 - f) / 0.2;
-        const X = Math.floor(a);            // Segment of the color scale
-        const Y = Math.floor(255 * (a - X)); // Interpolation factor within the segment
+        let r = 0, g = 0, b = 0;              // Initialize RGB values
 
-        // Initialize RGB color channels
-        let r = 0, g = 0, b = 0;
-
-        // Assign colors based on segment index (X)
+        // Map color segment to an RGB value (smooth rainbow gradient)
         switch (X) {
-            case 0: r = 255; g = Y; b = 0; break;         // Red to yellow
-            case 1: r = 255 - Y; g = 255; b = 0; break;   // Yellow to green
-            case 2: r = 0; g = 255; b = Y; break;         // Green to cyan
-            case 3: r = 0; g = 255 - Y; b = 255; break;   // Cyan to blue
-            case 4: r = Y; g = 0; b = 255; break;         // Blue to violet
-            case 5: r = 255; g = 0; b = 255; break;       // Violet to red/pink
+            case 0: r = 255; g = Y; b = 0; break;           // Red to yellow
+            case 1: r = 255 - Y; g = 255; b = 0; break;     // Yellow to green
+            case 2: r = 0; g = 255; b = Y; break;           // Green to cyan
+            case 3: r = 0; g = 255 - Y; b = 255; break;     // Cyan to blue
+            case 4: r = Y; g = 0; b = 255; break;           // Blue to violet
+            case 5: r = 255; g = 0; b = 255; break;         // Violet to red/pink
         }
 
-        // Return the color in CSS-compatible rgb() format
-        return `rgb(${r},${g},${b})`;
+        return `rgb(${r},${g},${b})`; // Return the RGB color string
     }
 
-    // Create the header row (top row of the table: 0 to 12)
-    let headerRow = '<tr><th>x</th>'; // First cell as a label
+    // === Build the Header Row ===
+    let headerRow = '<tr><th>x</th>'; // Top-left corner label
     for (let col = 0; col <= 12; col++) {
-        headerRow += `<th>${col}</th>`;
+        headerRow += `<th>${col}</th>`; // Column headers: 0–12
     }
     headerRow += '</tr>';
-
-    // Set the initial table header
     tableElement.innerHTML = headerRow;
 
-    // Loop through each row (0 to 12)
+    // === Build the Table Body ===
     for (let row = 0; row <= 12; row++) {
-        let tableRow = `<tr><th>${row}</th>`; // First column as row header
+        let tableRow = `<tr><th>${row}</th>`; // Row header: 0–12
 
-        // Loop through each column (0 to 12)
         for (let col = 0; col <= 12; col++) {
-            const product = row * col;                        // Calculate the multiplication product
-            const bgColor = calculateRainbowColor(product);   // Get a color for the background
+            const product = row * col;
+            const bgColor = calculateRainbowColor(product); // Generate dynamic background
             tableRow += `<td style="background-color: ${bgColor}; color: black">${product}</td>`;
         }
 
-        tableRow += '</tr>';
-
-        // Append the constructed row to the table
-        tableElement.innerHTML += tableRow;
+        tableRow += '</tr>';                     // Close row
+        tableElement.innerHTML += tableRow;      // Append row to table
     }
 }
 
-// Call the function once the script loads to generate the table
+// Run the function on script load
 generateMultiplicationTable();
