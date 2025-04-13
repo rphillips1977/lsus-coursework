@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Exam1-Robert_Lovelace</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		<!--css for the tables in the form -->	
+
+		.radio-container {
+			display: flex;
+			justify-content: center;
+		}
+		
+		.radio-container label {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-right: 20px;
+		}
+		
+		table.tablepic{
+			margin: 0 auto;
+			text-align:center;
+			width: 100%;
+		}
+		
+		table.staff{
+			margin: 0 auto;
+			text-align:center;
+			width: 100%;
+		}
+		
+		.form-container {
+			border: 1px solid #ccc;
+			padding: 20px; 
+			max-width: 500px; 
+			margin: 0 auto; 
+		}
+		table.recommend{
+			margin: 0 auto;
+			text-align:center;
+			width: 100%;
+		}
+		table.information{
+			margin: 0 auto;
+			text-align:right;
+			width: 100%;
+		}
+	</style>
+	</head>
+
+<body>
+
+
+<div class="form-container"> <!--defines the entire form -->
+<h1 style = "text-align:center;">Customer Services, Inc.</h1><!-- Center the h1 on the page -->
+
+<h3 style = "text-align:center;">Robert Lovelace (Information Systems)</h3> <!-- Center the h3 on the page -->
+
+<div style="background-color:gray; color:white;"> <!--highlights the sentence gray and the text white-->
+<p style = "text-align:center;">How satisfied were you with the following during your visit?</p>
+</div> <!-- end the highlighted and colored text -->
+
+<table class="tablepic"> <!--table with the pictures-->
+  <tr>
+	<td></td>
+    <td><img src="https://sun.cs.lsus.edu/~mtrutsch/teaching/2024-Spring/CSC435-635/Resources/exam/Exam1/Emojis/Emoji-5.png" 
+	alt="ES" width="30" height="30"></td><!--Extremely satisified emjoi-->
+    <td><img src="https://sun.cs.lsus.edu/~mtrutsch/teaching/2024-Spring/CSC435-635/Resources/exam/Exam1/Emojis/Emoji-4.png" 
+	alt="SS" width="30" height="30"></td><!--Somewhat satisified emjoi-->
+    <td><img src="https://sun.cs.lsus.edu/~mtrutsch/teaching/2024-Spring/CSC435-635/Resources/exam/Exam1/Emojis/Emoji-3.png" 
+	alt="NSD" width="30" height="30"></td> <!--Neutral emjoi-->
+	<td><img src="https://sun.cs.lsus.edu/~mtrutsch/teaching/2024-Spring/CSC435-635/Resources/exam/Exam1/Emojis/Emoji-2.png" 
+	alt="SD" width="30" height="30"></td><!--Somewhat dissatisfied emjoi-->
+	<td><img src="https://sun.cs.lsus.edu/~mtrutsch/teaching/2024-Spring/CSC435-635/Resources/exam/Exam1/Emojis/Emoji-1.png" 
+	alt="ED" width="30" height="30"></td><!--Extremely dissatisfiedsatisified emjoi-->
+  </tr>
+  <tr>
+	<td></td>
+    <td>Extremely<br>satisfied</td>
+    <td>Somewhat<br>satisfied</td>
+    <td>Neither<br>satisfied or<br>dissatisfied</td>
+	<td>Somewhat<br>dissatisfied</td>
+	<td>Extremely<br>dissatisfied</td>
+  </tr>
+  <tr>
+	<td>Staff:</td><!--Radio buttons for staff question-->
+	<td><input type="radio" name="staff" id="ES" checked></td><!--Extremely satisified radio button with the button being preselected---->
+    <td  style="background-color: lightgray;"><input type="radio" name="staff" id="SS"></td><!--Somewhat satisified radio button-->
+    <td><input type="radio" name="staff" id="NSD"></td><!--Neutral satisified radio button-->
+    <td  style="background-color: lightgray;"><input type="radio" name="staff" id="SD"></td><!--Somewhat dissatisfied radio button-->
+	<td><input type="radio" name="staff" id="ED"></td><!--Extremely dissatisfied radio button-->
+	<td></td>
+  </tr>
+  
+  <tr>
+	<td>Amenities:</td><!--Radio buttons for Amenities question-->
+	<td  style="background-color: lightgray;"><input type="radio" name="Amenities" id="ES"></td><!--Extremely satisified radio button-->
+    <td><input type="radio" name="Amenities" id="SS" checked></td><!--Somewhat satisified radio button with the button being preselected-->
+    <td  style="background-color: lightgray;"><input type="radio" name="Amenities" id="NSD"></td><!--Neutral satisified radio button-->
+    <td><input type="radio" name="Amenities" id="SD"></td><!--Somewhat dissatisfied radio button-->
+	<td  style="background-color: lightgray;"><input type="radio" name="Amenities" id="ED"></td><!--Extremely dissatisfied radio button-->
+	<td></td>
+  </tr>
+  
+   <tr>
+	<td>Cleanliness:</td><!--Radio buttons for Cleanliness question-->
+	<td><input type="radio" name="Cleanliness" id="ES"></td><!--Extremely satisified radio button-->
+    <td  style="background-color: lightgray;"><input type="radio" name="Cleanliness" id="SS"></td><!--Somewhat satisified radio button-->
+    <td><input type="radio" name="Cleanliness" id="NSD" checked></td><!--Neutral satisified radio button with the button being preselected-->
+    <td  style="background-color: lightgray;"><input type="radio" name="Cleanliness" id="SD"></td><!--Somewhat dissatisfied radio button-->
+	<td><input type="radio" name="Cleanliness" id="ED"></td><!--Extremely dissatisfied radio button-->
+	<td></td>
+  </tr>
+  
+   <tr>
+	<td>Food:</td><!--Radio buttons for Food question-->
+	<td  style="background-color: lightgray;"><input type="radio" name="Food" id="ES"></td><!--Extremely satisified radio button-->
+    <td><input type="radio" name="Food" id="SS"></td><!--Somewhat satisified radio button-->
+	<td  style="background-color: lightgray;"><input type="radio" name="Food" id="NSD"></td><!--Neutral satisified radio button-->
+	<td><input type="radio" name="Food" id="SD" checked></td><!--Somewhat dissatisfied radio button with the button being preselected-->
+	<td  style="background-color: lightgray;"><input type="radio" name="Food" id="ED"></td><!--Extremely dissatisfied radio button-->
+	<td></td>
+  </tr>
+  
+   <tr>
+		<td>Location:</td><!--Radio buttons for Location question-->
+		<td><input type="radio" name="Location" id="ES"></td><!--Extremely satisified radio button-->
+		<td  style="background-color: lightgray;"><input type="radio" name="Location" id="SS"></td><!--Somewhat satisified radio button-->
+		<td><input type="radio" name="Location" id="NSD"></td><!--Neutral satisified radio button-->
+		<td  style="background-color: lightgray;"><input type="radio" name="Location" id="SD"></td><!--Somewhat dissatisfied radio button-->
+		<td><input type="radio" name="Location" id="ED" checked></td><!--Extremely dissatisfied radio button with the button being preselected-->				
+	</tr>
+		
+</table>
+
+<table>
+
+	<tr>
+	<td>On a scale from 0 to 10, how likely are you to recommend his product?</td><!--Scale from 0 to 10 on how likely you are to reccomend this product-->		
+	</tr>
+</table>	
+<table class="recommend"><!--defines the recommend class for css-->
+	
+	<tr>
+		<td style = "text-align:left">Not at all likely</td><!--Left align the not at all likely-->
+		<td></td>
+		<td style = "text-align:right">Extremely likely</td><!--right align the extremely likely-->
+	</tr>
+</table>
+
+<table class="recommend"><!--Defines the recommend class for css-->		
+	
+	<tr>
+		<td>0</td>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>10</td>
+	</tr>
+	
+	<tr>
+		<td><input type="radio" name="option" id="r0"></td><!--radio button 0-->
+		<td><input type="radio" name="option" id="r1"></td><!--radio button 1-->
+		<td><input type="radio" name="option" id="r2"></td><!--radio button 2-->
+		<td><input type="radio" name="option" id="r3"></td><!--radio button 3-->
+		<td><input type="radio" name="option" id="r4"></td><!--radio button 4-->
+		<td><input type="radio" name="option" id="r5" checked></td><!--radio button 5 with the button being preselected-->
+		<td><input type="radio" name="option" id="r6"></td><!--radio button 6-->
+		<td><input type="radio" name="option" id="r7"></td><!--radio button 7-->
+		<td><input type="radio" name="option" id="r8"></td><!--radio button 8-->
+		<td><input type="radio" name="option" id="r9"></td><!--radio button 9-->
+		<td><input type="radio" name="option" id="r10"></td><!--radio button 10-->
+	</tr>
+</table>
+
+
+<form action="/action_page.php">
+
+<table class="information"><!--defines the class informatioin for css-->
+ <tr>
+<td style="text-align:center"><label for="quantity">Guests:</label> 
+<input type="number" id="quantity" name="quantity" size="5" min="1" max="4" value="3"></td><!--picker for how many guests, max 4 min 1 and value3-->
+
+<td><label for="email">Email adress:</label><input type="email" id="email" name="email" size="40" 
+required placeholder = "Enter email here"></td><!--email address label-->
+
+<td><label for="checkbox">A+?</label><input type="checkbox" id="checkbox" name="checkbox"></td><!--checkbox for A+-->
+</tr>
+
+<tr>
+<td><label for="date">Date of your stay:<input type="date" id="date" name="date"></td></label><!--label for date of stay-->
+<td></td>
+<td><label for="color">Color:</label><input type="color" id="color" name="color"></td><!--label for color picker-->
+
+</tr>
+</table>
+<table>
+<p style= "text-align:center"><input type="reset" value="Clear"><!--clear form button-->
+<input type="submit" value="Submit"></p><!--submit form button-->
+ </table>
+</form>
+
+</div>
+</body>
+</html>
