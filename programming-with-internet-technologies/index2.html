@@ -1,16 +1,26 @@
 <!DOCTYPE html>
+<!--
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Assignment: Lab 03 – Feedback Form
+    Description:
+        This form collects user feedback on various aspects of a website using 
+        inputs such as text, email, datalist, date picker, and textarea. It also 
+        includes static information about the form owner and course instructor.
+    Semester: Spring 2024
+-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Feedback Form CSC 635</title>
     <style>
-        /* Page background */
+        /* === Base Page Styling === */
         body {
             background-color: #CFD8DC;
             font-family: Arial, sans-serif;
         }
 
-        /* Basic table styling */
+        /* === Table Styling === */
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -31,30 +41,30 @@
 <body>
     <h1>Feedback Form</h1>
 
-    <!-- Single form element with correct method and action -->
+    <!-- === Feedback Form Begins === -->
     <form method="post" action="https://sun.cs.lsus.edu/~rlovelace/CSC635/c929a602a02ed9f934314c5884e61662ce6489d8e471e1348d5b439df855efad8012a3dd6347b24d/index.html" autocomplete="on">
 
-        <!-- First Name input -->
+        <!-- First Name -->
         <p>
             <label for="firstName">First Name:
                 <input name="firstName" id="firstName" type="text" placeholder="First Name" required>
             </label>
         </p>
 
-        <!-- Last Name input -->
+        <!-- Last Name -->
         <p>
             <label for="lastName">Last Name:
                 <input name="lastName" id="lastName" type="text" placeholder="Last Name" required>
             </label>
         </p>
 
-        <!-- Date picker -->
+        <!-- Date Picker -->
         <p>
             <label for="todaydate">Today's date:</label>
             <input type="date" id="todaydate" name="todaydate">
         </p>
 
-        <!-- Feedback list using datalist for suggestions -->
+        <!-- Feedback Category with Datalist Suggestions -->
         <p>
             <label for="txtList">Feedback list:
                 <input type="text" id="txtList" name="feedbackCategory" placeholder="Click Here" list="feedback">
@@ -70,26 +80,26 @@
             </label>
         </p>
 
-        <!-- Comments textarea -->
+        <!-- Comments -->
         <p>
             <label for="comments">Comments:<br>
                 <textarea id="comments" name="comments" placeholder="Please enter comment here" rows="4" cols="36"></textarea>
             </label>
         </p>
 
-        <!-- Email input -->
+        <!-- Email -->
         <p>
             <label for="email">Email address:</label>
             <input type="email" id="email" name="email" required placeholder="Enter email here">
         </p>
 
-        <!-- Form control buttons -->
+        <!-- Form Controls -->
         <p>
             <input type="reset" value="Clear Form">
             <input type="submit" value="Submit">
         </p>
 
-        <!-- Form Owner Information -->
+        <!-- === Form Owner Contact Info === -->
         <p><b>Form Owner Information:</b></p>
         <table>
             <tr>
@@ -104,7 +114,7 @@
             </tr>
         </table>
 
-        <!-- Instructor Information -->
+        <!-- === Instructor Contact Info === -->
         <p><b>Spring 2024 CSC 635:</b></p>
         <table>
             <tr>
@@ -119,6 +129,7 @@
             </tr>
         </table>
 
+        <!-- Footer Text -->
         <p>Your feedback is always appreciated!</p>
         <p><b>MORE SELECTIONS TO COME</b></p>
     </form>
