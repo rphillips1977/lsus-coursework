@@ -6,7 +6,7 @@ This repository showcases selected assignments and projects from my coursework a
 
 ## 📁 Coursework Categories
 
-### 📂 Database Implementation (Spring 2024)
+### 📂 Database Implementation (CSC 625 - Spring 2024)
 Projects focused on relational database design and administration. Topics include:
 - ER diagrams
 - Table creation, data types, and constraints
