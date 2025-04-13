@@ -1,17 +1,19 @@
 <?php
-// Check if the form has been submitted
+// Ensure the script only runs when accessed via a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $firstName = htmlspecialchars($_POST['firstName']);
-    $lastName = htmlspecialchars($_POST['lastName']);
-    $studentID = htmlspecialchars($_POST['studentID']);
-    $email = htmlspecialchars($_POST['email']);
-    $macAddress = htmlspecialchars($_POST['macAddress']);
-    $rpiType = htmlspecialchars($_POST['rpiType']);
-    $courses = $_POST['courses'];
+
+    // === Input Sanitization ===
+    // Use htmlspecialchars() to prevent XSS attacks by escaping HTML special characters
+    $firstName     = htmlspecialchars($_POST['firstName']);
+    $lastName      = htmlspecialchars($_POST['lastName']);
+    $studentID     = htmlspecialchars($_POST['studentID']);
+    $email         = htmlspecialchars($_POST['email']);
+    $macAddress    = htmlspecialchars($_POST['macAddress']);
+    $rpiType       = htmlspecialchars($_POST['rpiType']);
+    $courses       = $_POST['courses']; // This is an array, no need to sanitize here—handled below
     $academicLevel = htmlspecialchars($_POST['academicLevel']);
 
-    // Create an HTML document with the submitted data
+    // === Build HTML Confirmation Content ===
     $htmlContent = "<!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -29,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p><strong>Courses RPi Used For:</strong></p>
     <ul>";
 
-    // List courses
+    // Loop through selected courses and escape each entry before output
     foreach ($courses as $course) {
-        $htmlContent .= "<li>{$course}</li>";
+        $htmlContent .= "<li>" . htmlspecialchars($course) . "</li>";
     }
 
     $htmlContent .= "</ul>
@@ -39,10 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>";
 
-    // Save the HTML to a file
+    // === Save Confirmation to a File ===
+    // Save the generated confirmation to an HTML file (overwrites each time)
     file_put_contents('registration.html', $htmlContent);
 
-    // Optionally, you can send the user to a confirmation page or back to the form
-    echo 'Registration confirmed. <a href="registration.html">View confirmation</a>';
+    // === Output Confirmation Message ===
+    echo 'Registration confirmed. <a href="registration.html" target="_blank">View confirmation</a>';
 }
 ?>
