@@ -1,0 +1,47 @@
+/* Basic styles for the form and its elements */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+.lsus-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+.lsus-form h2 {
+    color: #4b0082;
+}
+.lsus-form label, .lsus-form input, .lsus-form select, .lsus-form textarea, .submit-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.lsus-form input[type="text"], .lsus-form input[type="email"], .lsus-form select, .lsus-form textarea {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.lsus-form input[type="checkbox"], .lsus-form input[type="radio"] {
+    margin-right: 5px;
+}
+.lsus-form .submit-btn {
+    background-color: #ffd700;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+.form-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <table id="multiplicationTable"></table>
+
+    <script>
+        // Function to generate the multiplication table and insert it into the HTML table element
+        function generateMultiplicationTable() {
+            const tableElement = document.getElementById('multiplicationTable');
+
+            // Create the header row
+            let headerRow = '<tr><th>x</th>';
+            for (let col = 0; col <= 12; col++) {
+                headerRow += `<th>${col}</th>`;
+            }
+            headerRow += '</tr>';
+            tableElement.innerHTML += headerRow;
+
+            // Fill in the table rows
+            for (let row = 0; row <= 12; row++) {
+                let tableRow = `<tr><th>${row}</th>`;
+                for (let col = 0; col <= 12; col++) {
+                    // Compute the product for each cell
+                    tableRow += `<td>${row * col}</td>`;
+                }
+                tableRow += '</tr>';
+                tableElement.innerHTML += tableRow;
+            }
+        }
+
+        // Generate and display the multiplication table
+        generateMultiplicationTable();
+    </script>
+</body>
+</html>
