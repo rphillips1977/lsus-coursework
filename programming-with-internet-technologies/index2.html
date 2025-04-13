@@ -1,96 +1,126 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Feedback Form CSC 635</title>
+    <style>
+        /* Page background */
+        body {
+            background-color: #CFD8DC;
+            font-family: Arial, sans-serif;
+        }
 
-<html>
-	<head>
-		<meta charset = "utf-8">
-		<title>Feedback Form CSC 635</title>
-		<style>
-		
-		 body{
-		background-color: #CFD8DC;
-			}
-			
-		table, th, td 
-		 {
-			border:1px solid black;
-		 }
-		 </style>
-	</head>
-	
-	<body>
-		<h1>Feedback Form</h1>
-	<form>
-		<form method = "post" action = "https://sun.cs.lsus.edu/~rlovelace/CSC635/c929a602a02ed9f934314c5884e61662ce6489d8e471e1348d5b439df855efad8012a3dd6347b24d/index.html">
-		<form method = "post" autocomplete = "on">
-		<p><label>First Name:
-			<input name = "name" type = "text" placeholder= "First Name" />
-			</label></p>
-			
-		<p><label>Last Name:
-				<input name = "name" type = "text" placeholder= "Last Name" />
-			</label></p>
- 			
-		<p><form action=" "https://sun.cs.lsus.edu/~rlovelace/CSC635/c929a602a02ed9f934314c5884e61662ce6489d8e471e1348d5b439df855efad8012a3dd6347b24d/index.html">
-				<label for="date">Today's date:</label>
-				<input type="date" id="todaydate" name="todaydate"></p>
-				
-		<p><label for "txtList" > Feedback list: 
-			<input type = "text" id = "txtList"
-				placeholder = "Click Here" list = "feedback" />
-					<datalist id = "feedback">
-						<option value = "Additions">
-						<option value = "Background color">
-						<option value = "Content">
-						<option value = "Heading">
-						<option value = "Images">
-						<option value = "Style Font">
-						<option value = "Other">
-					</datalist>
-			</label></p>
-		
-		<p><label>Comments:<br>
-			<textarea name = "comments" placeholder="Please enter comment here"
-			rows = "4" cols = "36"></textarea>
-			</label></p>
-			
-		<p><form action="/action_page.php">
-			<label for="email">Email adress:</label>
-				<input type="email" id="email" name="email" required placeholder = "Enter email here"></p>				
-				
-				<p><input type="reset" value="Clear Form">
-					<input type="submit" value="Submit"></p>
-					
-		<p><b>Form Owner Information:</b></p>			
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>E-Mail</th>
-					<th>Phone Number</th>
-				</tr>
-				<tr>
-					<td>Robert Lovelace</td>
-					<td>lovelacer88@lsus.edu</td>
-					<td>(318) 401-8025</td>
-				</tr>
-			</table><br>
-			
-		<p><b>Spring 2024 CSC 635:</b></p>			
-			<table>
-				<tr>
-					<th>Instructor</th>
-					<th>E-Mail</th>
-					<th>Phone Number</th>
-				</tr>
-				<tr>
-					<td>Dr. Marjan Trutschl</td>
-					<td>mtrutschl@lsus.edu</td>
-				<td>(318) 797-5131</td>
-				</tr>
-			</table><br>
-		<p>Your feedback is always appreciated!</p>
-		
-		<p><b>MORE SELECTIONS TO COME</b></p>
-		
-	</form>
-	</body>
+        /* Basic table styling */
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th {
+            background-color: #eceff1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Feedback Form</h1>
+
+    <!-- Single form element with correct method and action -->
+    <form method="post" action="https://sun.cs.lsus.edu/~rlovelace/CSC635/c929a602a02ed9f934314c5884e61662ce6489d8e471e1348d5b439df855efad8012a3dd6347b24d/index.html" autocomplete="on">
+
+        <!-- First Name input -->
+        <p>
+            <label for="firstName">First Name:
+                <input name="firstName" id="firstName" type="text" placeholder="First Name" required>
+            </label>
+        </p>
+
+        <!-- Last Name input -->
+        <p>
+            <label for="lastName">Last Name:
+                <input name="lastName" id="lastName" type="text" placeholder="Last Name" required>
+            </label>
+        </p>
+
+        <!-- Date picker -->
+        <p>
+            <label for="todaydate">Today's date:</label>
+            <input type="date" id="todaydate" name="todaydate">
+        </p>
+
+        <!-- Feedback list using datalist for suggestions -->
+        <p>
+            <label for="txtList">Feedback list:
+                <input type="text" id="txtList" name="feedbackCategory" placeholder="Click Here" list="feedback">
+                <datalist id="feedback">
+                    <option value="Additions">
+                    <option value="Background color">
+                    <option value="Content">
+                    <option value="Heading">
+                    <option value="Images">
+                    <option value="Style Font">
+                    <option value="Other">
+                </datalist>
+            </label>
+        </p>
+
+        <!-- Comments textarea -->
+        <p>
+            <label for="comments">Comments:<br>
+                <textarea id="comments" name="comments" placeholder="Please enter comment here" rows="4" cols="36"></textarea>
+            </label>
+        </p>
+
+        <!-- Email input -->
+        <p>
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter email here">
+        </p>
+
+        <!-- Form control buttons -->
+        <p>
+            <input type="reset" value="Clear Form">
+            <input type="submit" value="Submit">
+        </p>
+
+        <!-- Form Owner Information -->
+        <p><b>Form Owner Information:</b></p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th>Phone Number</th>
+            </tr>
+            <tr>
+                <td>Robert Lovelace</td>
+                <td>lovelacer88@lsus.edu</td>
+                <td>(318) 401-8025</td>
+            </tr>
+        </table>
+
+        <!-- Instructor Information -->
+        <p><b>Spring 2024 CSC 635:</b></p>
+        <table>
+            <tr>
+                <th>Instructor</th>
+                <th>E-Mail</th>
+                <th>Phone Number</th>
+            </tr>
+            <tr>
+                <td>Dr. Marjan Trutschl</td>
+                <td>mtrutschl@lsus.edu</td>
+                <td>(318) 797-5131</td>
+            </tr>
+        </table>
+
+        <p>Your feedback is always appreciated!</p>
+        <p><b>MORE SELECTIONS TO COME</b></p>
+    </form>
+</body>
 </html>
