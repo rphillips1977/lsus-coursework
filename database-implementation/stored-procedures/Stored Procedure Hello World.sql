@@ -1,5 +1,6 @@
 -- =============================================
--- Author:        [Robert Lovelace]
+-- Author:        Robert Lovelace
+-- Course:        CSC 625 Database Implementation
 -- Procedure:     spHello
 -- Description:   Simple stored procedure that returns a "Hello, World!" message.
 -- =============================================
