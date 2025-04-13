@@ -1,47 +1,71 @@
-/* Basic styles for the form and its elements */
+/* === Base Layout and Typography === */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    padding: 20px;
+    font-family: Arial, sans-serif;         /* Clean, readable font */
+    background-color: #f9f9f9;              /* Light background for contrast */
+    color: #333;                            /* Neutral dark text color */
+    padding: 20px;                          /* Padding around the entire page */
 }
+
+/* === Main Form Container === */
 .lsus-form {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: #fff;                 /* White background for form area */
+    border: 1px solid #ddd;                 /* Light border for definition */
+    padding: 20px;                          /* Internal spacing */
+    border-radius: 5px;                     /* Rounded corners for modern look */
 }
+
+/* === Form Heading === */
 .lsus-form h2 {
-    color: #4b0082;
+    color: #4b0082;                         /* LSUS purple for branding */
 }
-.lsus-form label, .lsus-form input, .lsus-form select, .lsus-form textarea, .submit-btn {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+
+/* === Shared Styles for Form Inputs and Labels === */
+.lsus-form label,
+.lsus-form input,
+.lsus-form select,
+.lsus-form textarea,
+.submit-btn {
+    display: block;                         /* Stack elements vertically */
+    width: 100%;                            /* Full-width alignment */
+    margin-bottom: 10px;                    /* Space between elements */
 }
-.lsus-form input[type="text"], .lsus-form input[type="email"], .lsus-form select, .lsus-form textarea {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+
+/* === Input Fields and Dropdown Styling === */
+.lsus-form input[type="text"],
+.lsus-form input[type="email"],
+.lsus-form select,
+.lsus-form textarea {
+    padding: 8px;                           /* Comfortable padding inside fields */
+    border-radius: 4px;                     /* Rounded corners */
+    border: 1px solid #ccc;                 /* Light gray border */
 }
-.lsus-form input[type="checkbox"], .lsus-form input[type="radio"] {
-    margin-right: 5px;
+
+/* === Inline Alignment for Radio and Checkbox Options === */
+.lsus-form input[type="checkbox"],
+.lsus-form input[type="radio"] {
+    margin-right: 5px;                      /* Small spacing between input and label */
 }
+
+/* === Submit Button Styling === */
 .lsus-form .submit-btn {
-    background-color: #ffd700;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+    background-color: #ffd700;              /* LSUS gold */
+    color: white;                           /* White text for contrast */
+    padding: 10px 15px;                     /* Button padding */
+    border: none;                           /* Remove default border */
+    cursor: pointer;                        /* Pointer cursor on hover */
+    font-size: 16px;                        /* Readable button text */
 }
+
+/* === Branding: Logo Styling === */
 .logo {
-    max-width: 100px;
-    margin-bottom: 20px;
+    max-width: 100px;                       /* Constrain logo size */
+    margin-bottom: 20px;                    /* Space below logo */
 }
+
+/* === Section Divider Styling for Visual Grouping === */
 .form-section {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 20px;                    /* Spacing between sections */
+    padding: 10px;                          /* Inner spacing */
+    border: 1px solid #ccc;                 /* Light section border */
+    border-radius: 5px;                     /* Rounded section corners */
 }
