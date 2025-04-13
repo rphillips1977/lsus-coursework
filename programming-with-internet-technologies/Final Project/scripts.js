@@ -1,4 +1,14 @@
 /**
+ * Author: Robert Lovelace
+ * Course: CSC 635 Programming with Internet Technologies
+ * Semester: Spring 2024
+ * File: scripts.js
+ * Description: Validates the format of the MAC address input before allowing the 
+ *              LSUS RPi registration form to be submitted. Ensures that users 
+ *              follow the proper hexadecimal format (e.g., XX:XX:XX:XX:XX:XX).
+ */
+
+/**
  * Validates the MAC address input format before allowing form submission.
  * Ensures users follow the proper hexadecimal format (e.g., XX:XX:XX:XX:XX:XX).
  * 
