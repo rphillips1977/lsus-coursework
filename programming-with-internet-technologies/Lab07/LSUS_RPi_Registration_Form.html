@@ -1,7 +1,18 @@
+<!--
+    Author: Robert Lovelace
+    Course: CSC 635 Programming with Internet Technologies
+    Semester: Spring 2024
+    File: rpi-registration.html
+    Description: HTML form for collecting student Raspberry Pi registration
+                 details at LSUS. Includes fields for student info, MAC address,
+                 course usage, and academic level, with form validation.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Responsive design meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSUS RPi Registration</title>
     
@@ -9,7 +20,7 @@
         /* === Page Styling === */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Soft neutral background */
+            background-color: #f9f9f9;
             color: #333;
             padding: 20px;
         }
@@ -21,7 +32,7 @@
             padding: 20px;
             border-radius: 5px;
             max-width: 600px;
-            margin: 0 auto; /* Center form horizontally */
+            margin: 0 auto;
         }
 
         .lsus-form h2 {
@@ -140,10 +151,10 @@
         
         if (!macAddressPattern.test(macAddress)) {
             alert('Please enter a valid RPi WiFi MAC address in the format XX:XX:XX:XX:XX:XX.');
-            return false; // Cancel form submission if invalid
+            return false;
         }
 
-        return true; // Allow form submission if all checks pass
+        return true;
     }
 </script>
 
