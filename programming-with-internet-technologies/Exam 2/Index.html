@@ -2,33 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Ensures proper rendering and touch zooming -->
+    <!-- Set the viewport for responsive design on mobile and tablet devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Container Metrics Calculator</title>
-	
-    <!-- Link to the external CSS file for styling -->
+    
+    <!-- Link to external stylesheet for styling the layout and elements -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Assignment information and user details -->
+    <!-- Student and assignment information for identification -->
     <div id="assignmentInfo">
         <p>Name: Robert Lovelace</p>
         <p>Information Systems</p>
     </div>
-	
-    <!-- Input fields for container dimensions and calculate button -->
+
+    <!-- Input section for entering container dimensions -->
     <div id="containerMetrics">
+        <!-- Input for container width in centimeters -->
         <input type="text" id="width" placeholder="Width (cm)">
+        
+        <!-- Input for container height in centimeters -->
         <input type="text" id="height" placeholder="Height (cm)">
+        
+        <!-- Input for container depth in centimeters -->
         <input type="text" id="depth" placeholder="Depth (cm)">
+        
+        <!-- Disabled by default; enabled via JavaScript when inputs are valid -->
         <button id="calculate" disabled>Calculate</button>
     </div>
-	
-    <!-- Div for displaying calculation results -->
+
+    <!-- Area where calculation results will be dynamically inserted -->
     <div id="results"></div>
 
-    <!-- Link to the external JavaScript file for functionality -->
+    <!-- External JavaScript handles input validation, event listeners, and calculations -->
     <script src="calculations.js"></script>
 </body>
 </html>
