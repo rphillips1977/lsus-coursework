@@ -1,41 +1,30 @@
-# Database Implementation (Spring 2024)
+# Database Implementation (CSC 625 - Spring 2024)
 
-This folder contains coursework from the Database Implementation class at Louisiana State University Shreveport (LSUS). The projects here demonstrate core relational database concepts, SQL development, stored procedures, and trigger-based automation.
+This folder contains assignments and projects from the Database Implementation course at Louisiana State University Shreveport (LSUS).
 
----
+## Course Overview
+This course focused on relational database design, implementation, and optimization. Key topics included:
 
-## 📂 Contents
+- Entity-Relationship (ER) modeling
+- Database normalization
+- SQL scripting for DDL and DML operations
+- Views, stored procedures, and triggers
+- Indexing and performance optimization
 
-### 📄 SQL Scripts
-- `MidTerm.sql` – Midterm assessment including table creation, inserts, and advanced queries.
-- `Quiz1DB.sql` – Practice quiz with schema setup and basic queries.
-- `SQLQuery6.sql` – Focused exercises on joins, filtering, and sorting.
+## Folder Structure
 
----
+### `stored-procedures/`
+Contains MySQL stored procedure scripts used to automate business logic within a database.
 
-### ⚙️ Stored Procedures
-- `Stored Procedure Hello World.sql` – Basic syntax demo.
-- `Stored Procedure InsertEmployee.sql` – Procedure for inserting employee records into a database.
-- `Stored Procedure InsertProduct.sql` – Adds new products using parameterized procedure.
+### `triggers/`
+Includes trigger definitions designed to maintain data integrity and automate responses to table events.
 
----
+## Technologies Used
+- MySQL
+- SQL Workbench
+- ERD tools (Lucidchart, Draw.io)
 
-### 🔁 Triggers
-- `Trigger1.sql` – Trigger that executes after an insert or update event.
-- `Trigger2.sql` – Additional trigger for automation and data integrity enforcement.
-
----
-
-## 🛠️ Skills Demonstrated
-- Database normalization and design
-- SQL DDL & DML scripting
-- Creating and executing stored procedures
-- Implementing and testing database triggers
-- Practical application of relational database concepts
-
----
-
-## 📫 Contact
-**Robert Lovelace**  
-📧 robert.phillips77@gmail.com  
-🔗 [GitHub Portfolio](https://github.com/rphillips1977/lsus-coursework)
+## Highlights
+- Designed normalized relational databases from case studies
+- Implemented multi-table joins, subqueries, and aggregation queries
+- Created advanced database logic using stored procedures and triggers
