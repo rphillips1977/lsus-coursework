@@ -26,7 +26,7 @@ This repository showcases coursework completed as part of the Master of Science 
 
    - Projects include prompt-based video generation using the Wan2.1-T2V-14B model.
    - Technologies: PyTorch, Hugging Face Diffusers, Transformers, Gradio  
-   [View Folder ›](generative-ai)
+   [View Folder ›](Wan2_1_T2V_14B_Implementation.ipynb)
 
 ---
 
