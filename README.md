@@ -1,22 +1,32 @@
 # LSUS Coursework Repository
 
-This repository showcases coursework completed as part of the Master of Science in Computer Science program at Louisiana State University Shreveport (LSUS). It includes hands-on academic projects demonstrating knowledge in database systems, full-stack web development, and internet technologies.
+This repository showcases coursework completed as part of the Master of Science in Computer Science program at Louisiana State University Shreveport (LSUS). It includes hands-on academic projects demonstrating knowledge in database systems, full-stack web development, internet technologies, and generative AI.
 
 ## Course Folders
 
-### 1. Programming with Internet Technologies (CSC 635 - Spring 2024)
-Focuses on client-server architecture, HTML, CSS, JavaScript, and server-side scripting.
-- Projects demonstrate interactive front-end designs and simple back-end functionality.
-- Technologies: HTML5, CSS3, JavaScript, PHP
+1. Programming with Internet Technologies (CSC 635 - Spring 2024)
 
-[View Folder ›](./programming-with-internet-technologies)
+   Focuses on client-server architecture, HTML, CSS, JavaScript, and server-side scripting.
 
-### 2. Database Implementation (CSC 625 - Spring 2024)
-Covers relational database design, SQL scripting, stored procedures, triggers, and views.
-- Includes ER diagrams, normalization exercises, and database scripts.
-- Technologies: MySQL, SQL
+   - Projects demonstrate interactive front-end designs and simple back-end functionality.
+   - Technologies: HTML5, CSS3, JavaScript, PHP  
+   [View Folder ›](programming-with-internet-technologies)
 
-[View Folder ›](./database-implementation)
+2. Database Implementation (CSC 625 - Spring 2024)
+
+   Covers relational database design, SQL scripting, stored procedures, triggers, and views.
+
+   - Includes ER diagrams, normalization exercises, and database scripts.
+   - Technologies: MySQL, SQL  
+   [View Folder ›](database-implementation)
+
+3. Generative AI (CSC 690 - Summer 2025)
+
+   Explores foundational and applied topics in generative AI including text-to-video synthesis, transformer models, and fine-tuning pipelines.
+
+   - Projects include prompt-based video generation using the Wan2.1-T2V-14B model.
+   - Technologies: PyTorch, Hugging Face Diffusers, Transformers, Gradio  
+   [View Folder ›](generative-ai-research)
 
 ---
 
@@ -27,4 +37,4 @@ I'm currently pursuing my M.S. in Computer Science at LSUS and recently earned m
 ## Contact
 
 - GitHub: [@rphillips1977](https://github.com/rphillips1977)
-- LinkedIn: [linkedin.com/in/lovelacer](https://linkedin.com/in/lovelacer)
+- LinkedIn: [linkedin.com/in/lovelacer](https://www.linkedin.com/in/lovelacer)
